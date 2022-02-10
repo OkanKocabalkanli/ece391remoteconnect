@@ -1,4 +1,4 @@
-# Auto Remote Connect
+# Auto Remote Connect(windows only)
 
 ## Requirements:
     python 3.6+
