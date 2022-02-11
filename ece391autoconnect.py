@@ -1,7 +1,7 @@
 import argparse
 import requests as r
 from datetime import datetime
-from subprocess import Popen,CREATE_NEW_CONSOLE
+from subprocess import Popen#,CREATE_NEW_CONSOLE
 import os
 
 url = "https://ws.engr.illinois.edu/labtrack/computers.asp?lab=C4D3EACD-BAEA-4E70-8D23-3A80B66F60EF"
@@ -110,7 +110,7 @@ if __name__ == "__main__":
         quit()
     myList = os.listdir(os.getcwd())
     print(len(myList))
-    if len(myList) !=45:
+    if len(myList) !=48:
         gen = input("Create rdp files? Y/N if no you will have to download from the website")
         if gen.upper() == "Y":
             for x in range(1,44):  #there are 44 computers
@@ -125,7 +125,7 @@ if __name__ == "__main__":
             first_empty = str(c).upper()
     if first_empty is not None:
         print(first_empty)
-        a = Popen(f"mstsc /v:{first_empty}",creationflags=CREATE_NEW_CONSOLE)
+        a = Popen(f"mstsc /v:{first_empty}")#,creationflags=CREATE_NEW_CONSOLE)
     else:
         print("Couldn't connect!")
 
